@@ -101,21 +101,56 @@ html {
   background: radial-gradient(ellipse at bottom, #1B2735 0%, rgb(9, 10, 15) 100%);
 }
 
-#about {
+#home {
   height: 100vh;
   overflow: hidden;
 }
 
-#about-content {
+#home-content {
   font-family: 'Montserrat', cursive;
   position: absolute;
   color: #FFF;
-  width: 100%;
+  width: 940px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#contentwrapper {
+  display: inherit;
+}
+
+#home-content::before {
+  display: block;
+  content: "";
+  visibility: hidden;
+  height: 0px;
+  position: absolute;
+  top: 48%;
+  left: 49.5%;
+  transform: translate(-50%, -50%);
+  border-right: 2px solid #fff;
+  animation: border-anim 1s ease 4.3s;
+  animation-fill-mode: forwards;
+}
+
+#home-content::after {
+  display: block;
+  visibility: hidden;
+  content: "";
+  height: 0px;
+  position: absolute;
+  top: 52%;
+  left: 50.5%;
+  transform: translate(-50%, -50%);
+  border-left: 2px solid #fd5d5d;
+  animation: border-anim 1s ease 4.7s;
+  animation-fill-mode: forwards;
 }
 
 #contentleft {
@@ -128,18 +163,18 @@ html {
   text-align: right;
 }
 
-#contentleft::before {
-  display: block;
-  content: "";
-  visibility: hidden;
-  height: 0px;
-  position: absolute;
-  top: -15px;
-  right: -10px;
-  border-right: 1px solid #fff;
-  animation: border-anim 1.5s ease 4.7s;
-  animation-fill-mode: forwards;
-}
+// #contentleft::before {
+//   display: block;
+//   content: "";
+//   visibility: hidden;
+//   height: 156px;
+//   position: absolute;
+//   top: -20px;
+//   right: -10px;
+//   border-right: 1px solid #fff;
+//   animation: border-anim 1.5s ease 4.7s;
+//   animation-fill-mode: forwards;
+// }
 
 #contentright {
   position: relative;
@@ -151,18 +186,18 @@ html {
   text-align: left;
 }
 
-#contentright::before {
-  display: block;
-  visibility: hidden;
-  content: "";
-  height: 0px;
-  position: absolute;
-  bottom: -15px;
-  left: -10px;
-  border-left: 1px solid #fd5d5d;
-  animation: border-anim 1.5s ease 5.4s;
-  animation-fill-mode: forwards;
-}
+// #contentright::before {
+//   display: block;
+//   visibility: hidden;
+//   content: "";
+//   height: 156px;
+//   position: absolute;
+//   bottom: -15px;
+//   left: -10px;
+//   border-left: 1px solid #fd5d5d;
+//   animation: border-anim 1.5s ease 5.4s;
+//   animation-fill-mode: forwards;
+// }
 
 #group path {
   stroke: #fd5d5d;
@@ -220,13 +255,30 @@ html {
 }
 
 @keyframes border-anim {
-  from {
-    visibility: hidden;
-    height: 0px;
-  }
   to {
     visibility: visible;
-    height: 100%;
+    height: 156px;
+  }
+}
+
+@keyframes border-anim-width {
+  to {
+    visibility: visible;
+    width: 420px;
+  }
+}
+
+@keyframes small-border {
+  to {
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+@keyframes border-anim-small {
+  to {
+    visibility: visible;
+    width: 240px;
   }
 }
 
@@ -657,7 +709,167 @@ p {
   }
 }
 
+// TODO: Prevent the line animations from firing again when the page is resized
+@media screen and (max-width: 998px){
+
+  /* Home Styles */
+  #home-content {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #contentwrapper {
+    position: absolute;
+    width: 490px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #contentleft {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  #contentright {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
+
+  #home-content::before {
+    display: block;
+    content: "";
+    visibility: hidden;
+    height: 20px;
+    width: 0px;
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-bottom: 2px solid #fff;
+    animation: border-anim-width 1s ease 4.7s;
+    animation-fill-mode: forwards;
+  }
+  
+  #home-content::after {
+    display: block;
+    visibility: hidden;
+    content: "";
+    height: 20px;
+    width: 0px;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-top: 2px solid #fd5d5d;
+    animation: border-anim-width 1s ease 4.3s;
+    animation-fill-mode: forwards;
+  }
+  /* End Home */
+
+  /* Project Styles */
+  #projects {
+    height: 1270px;
+  }
+
+  .project-container {
+    width: 640px;
+  }
+  /* End Project */
+}
+
 @media screen and (max-width: 768px){
+/* Home Styles */
+#home-content {
+  text-align: center;
+  display: block;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#contentwrapper {
+  position: absolute;
+  width: 300px;
+}
+
+#contentleft {
+  font-size: 24px;
+}
+#contentright {
+  font-size: 18px;
+}
+
+#home-content::before {
+  display: none;
+}
+
+#contentleft::before {
+  visibility: hidden;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 25px;
+  bottom: -15px;
+  z-index: -1;
+  border-bottom: 2px solid #fd5d5d;
+  transform: translateX(-400px);
+  animation: small-border 1s ease 5s;
+  animation-fill-mode: forwards;
+}
+
+#contentright::before {
+  visibility: hidden;
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 25px;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-top: 2px solid #FFF;
+  transform: translateX(400px);
+  animation: small-border 1s ease 5.3s;
+  animation-fill-mode: forwards;
+}
+
+#home-content::after {
+  display: none;
+}
+/* End Home */
+
+  /* Project Styles */
+  #projects {
+    height: 2200px;
+  }
+
+  .project-container {
+    width: 320px;
+  }
+
+  .project-container::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: 50%;
+    height: 1600px;
+    width: 1600px;
+    transform: rotate(67.5deg) skewX(45deg) scaleY( cos(45deg));
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+  }
+  /* End Project */
+
   .line {
     width: 30px;
     height: 3px;
@@ -677,6 +889,7 @@ p {
       transform: translate(-5%, -50%);
       z-index: 2;
   }
+
   .nav-links {
     position: fixed;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);

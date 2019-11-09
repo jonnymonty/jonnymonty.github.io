@@ -3,7 +3,7 @@ const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
 const logo = document.querySelectorAll('#group path');
 const header = document.querySelector('header');
-const sectionOne = document.querySelector('#about');
+const sectionOne = document.querySelector('#home');
 const projects = document.querySelector('.nav-projects');
 
 hamburger.addEventListener('click', () => {
