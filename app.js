@@ -8,9 +8,16 @@ const projects = document.querySelector('.nav-projects');
 
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.toggle("fade");
+    links.forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = '';
+        } else {
+            link.style.animation = `navLinkFade 0.3s ease ${index / 7 + 0.3}s forwards`;
+        }
     });
+
+    hamburger.classList.toggle('toggle');
+
 });
 
 // Active navigation on scroll
@@ -38,8 +45,10 @@ const sectionOneObserver = new IntersectionObserver(function(entries, sectionOne
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
             header.classList.add("nav-scrolled");
+            navLinks.classList.add("scrolled-bg");
         } else {
             header.classList.remove("nav-scrolled");
+            navLinks.classList.remove("scrolled-bg");
         }
     });
 },
