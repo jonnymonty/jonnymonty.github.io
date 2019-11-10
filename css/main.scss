@@ -803,8 +803,8 @@ p {
   bottom: -15px;
   z-index: -1;
   border-bottom: 2px solid #fd5d5d;
-  transform: translateX(-400px);
-  animation: small-border 1s ease 5s;
+  transform: translateX(-200%);
+  animation: small-border 1s ease 4.3s;
   animation-fill-mode: forwards;
 }
 
@@ -818,8 +818,8 @@ p {
   bottom: 0;
   z-index: -1;
   border-top: 2px solid #FFF;
-  transform: translateX(400px);
-  animation: small-border 1s ease 5.3s;
+  transform: translateX(200%);
+  animation: small-border 1s ease 4.6s;
   animation-fill-mode: forwards;
 }
 
