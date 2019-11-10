@@ -45,10 +45,8 @@ const sectionOneObserver = new IntersectionObserver(function(entries, sectionOne
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
             header.classList.add("nav-scrolled");
-            navLinks.classList.add("scrolled-bg");
         } else {
             header.classList.remove("nav-scrolled");
-            navLinks.classList.remove("scrolled-bg");
         }
     });
 },
