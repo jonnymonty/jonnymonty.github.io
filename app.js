@@ -15,7 +15,6 @@ hamburger.addEventListener('click', () => {
     links.forEach((link, index) => {
         var n = link.style.animation.split(" ");
         if (n[n.length - 1] == 'navLinkFade') {
-            console.log(link.style.animation);
             link.style.animation = `navLinkLeave 0.3s ease`;
         } else {
             link.style.animation = `navLinkFade 0.3s ease ${index / 7 + 0.3}s forwards`;
