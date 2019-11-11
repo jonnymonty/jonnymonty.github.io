@@ -1,7 +1,7 @@
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
-const name = document.querySelector('.name h1');
+const logoname = document.querySelector('.name h1');
 
 // TO:DO add the ability to click Jonny Monty to take you to the about page
 // const logo = document.querySelectorAll('#group path');
@@ -13,9 +13,10 @@ const sectionOne = document.querySelector('#home');
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle("open");
     links.forEach((link, index) => {
-        if (link.style == `animation: 0.3s ease ${index / 7 + 0.3}s 1 normal forwards running navLinkFade;`) {
-            link.style.animation = '';
-            link.style.animation = `navLinkLeave 0.3s ease forwards`;
+        var n = link.style.animation.split(" ");
+        if (n[n.length - 1] == 'navLinkFade') {
+            console.log(link.style.animation);
+            link.style.animation = `navLinkLeave 0.3s ease`;
         } else {
             link.style.animation = `navLinkFade 0.3s ease ${index / 7 + 0.3}s forwards`;
         }
@@ -25,7 +26,7 @@ hamburger.addEventListener('click', () => {
 
 });
 
-name.addEventListener('click', () => {
+logoname.addEventListener('click', () => {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 });
 
