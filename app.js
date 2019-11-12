@@ -30,11 +30,11 @@ logoname.addEventListener('click', () => {
 });
 
 // Active navigation on scroll
-window.addEventListener('scroll', event =>{
+window.addEventListener('scroll', event => {
     let navigationLinks = document.querySelectorAll('.nav-links li a');
     let fromTop = window.scrollY + 100;
 
-    navigationLinks.forEach(link =>{
+    navigationLinks.forEach(link => {
         let section = document.querySelector(link.hash);
 
         if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
@@ -50,15 +50,15 @@ const sectionOneOptions = {
     rootMargin: "-100px 0px 0px 0px"
 };
 
-const sectionOneObserver = new IntersectionObserver(function(entries, sectionOneObserver){
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            header.classList.add("nav-scrolled");
-        } else {
-            header.classList.remove("nav-scrolled");
-        }
-    });
-},
-sectionOneOptions);
+const sectionOneObserver = new IntersectionObserver(function (entries, sectionOneObserver) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                header.classList.add("nav-scrolled");
+            } else {
+                header.classList.remove("nav-scrolled");
+            }
+        });
+    },
+    sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
