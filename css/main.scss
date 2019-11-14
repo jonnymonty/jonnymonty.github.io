@@ -315,6 +315,10 @@ html {
   width: 100%;
 }
 
+#project-info {
+  visibility: hidden;
+}
+
 // #projects::after {
 //   position: absolute;
 //   width: 100%;
@@ -879,6 +883,15 @@ p {
     transform: rotate(67.5deg) skewX(45deg) scaleY(cos(45deg));
     background-color: rgba(0, 0, 0, 0.05);
     z-index: -1;
+  }
+
+  #project-info {
+    visibility: visible;
+    position: absolute;
+    font-size: 25px;
+    top: 10px;
+    right: 10px;
+    color: white;
   }
 
   /* End Project */
