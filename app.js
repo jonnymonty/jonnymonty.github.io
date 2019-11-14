@@ -13,8 +13,7 @@ const sectionOne = document.querySelector('#home');
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle("open");
     links.forEach((link, index) => {
-        var n = link.style.animation.split(" ");
-        if (n[n.length - 1] == 'navLinkFade') {
+        if (link.style.animation.includes('navLinkFade')) {
             link.style.animation = `navLinkLeave 0.3s ease`;
         } else {
             link.style.animation = `navLinkFade 0.3s ease ${index / 7 + 0.3}s forwards`;
@@ -62,3 +61,15 @@ const sectionOneObserver = new IntersectionObserver(function (entries, sectionOn
     sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
+
+// Lose Focus on mobile
+ if (screen.width <= 768)
+ {
+    const boxes = document.querySelectorAll('.box');
+
+    boxes.forEach(box => {
+        box.addEventListener('click', () => {
+            box.classList.toggle('boxclicked');
+        });
+    });
+ }
