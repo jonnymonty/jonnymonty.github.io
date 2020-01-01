@@ -451,8 +451,9 @@ html {
   border-radius: 10px;
   display: inline-block;
   border: none;
+  width: 110px;
+  padding: 15px 0px;
   margin-top: 15px;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -599,6 +600,25 @@ button:focus .front {
 }
 
 /* End Contact */
+
+/* Gif Project */
+.projectContainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0, .8);
+}
+
+.project img {
+  width: 900px;
+}
+
+/* End Gif Project */
 
 /* Footer */
 
@@ -799,6 +819,10 @@ p {
     width: 640px;
   }
 
+  .project img {
+    width: 720px;
+  }
+
   /* End Project */
 }
 
@@ -920,6 +944,10 @@ p {
     background: rgba(0, 0, 0, .8);
     transform: scaleY(0);
     transition: transform .5s;
+  }
+
+  .project img {
+    width: 100%;
   }
 
   /* End Project */

@@ -2,6 +2,7 @@ const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
 const logoname = document.querySelector('.name h1');
+const displayProjectContainer = document.querySelector('.displayProjectContainer');
 
 // TO:DO add the ability to click Jonny Monty to take you to the about page
 // const logo = document.querySelectorAll('#group path');
@@ -72,4 +73,23 @@ sectionOneObserver.observe(sectionOne);
             box.classList.toggle('boxclicked');
         });
     });
+ }
+
+ // Display the projects gif
+ function DisplayProject(project) {
+     const projectElement = document.createElement('div');
+     projectElement.setAttribute('class', 'projectContainer');
+     projectElement.onclick = closeProject;
+     const innercode = `<div class="project">
+        <img src="gif/${project}.gif"></img>
+     </div>`;
+
+     projectElement.innerHTML = innercode;
+
+     displayProjectContainer.appendChild(projectElement);
+ }
+
+ // Close the gif project
+ function closeProject() {
+     displayProjectContainer.innerHTML = "";
  }
