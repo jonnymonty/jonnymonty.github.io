@@ -200,19 +200,21 @@
                 </div>
                 <div class="contact-form">
                     <form autocomplete="off" action="https://formspree.io/jonmontyy@gmail.com" method="POST">
-                        <input type="text" autocomplete="off" id="name" name="name" placeholder="Name.." required>
+                        <label>Name</label>
+                        <input type="text" autocomplete="off" id="name" name="name" required>
 
                         <!-- The honeypot field -->
                         <input type="text" name="_gotcha" style="display:none" />
 
                         <!-- Thank you redirect -->
                         <!-- <input type="hidden" name="_next" value="https://mysite.com/thanks.html"/> -->
+                        <label>Email</label>
+                        <input type="email" autocomplete="off" id="email" name="_replyto" required>
 
-                        <input type="email" autocomplete="off" id="email" name="_replyto" placeholder="Email.." required>
+                        <input type="text" autocomplete="off" id="subject" name="_subject" placeholder="Subject.." value="Portfolio Message">
 
-                        <input type="text" autocomplete="off" id="subject" name="_subject" placeholder="Subject..">
-
-                        <textarea id="message" autocomplete="off" name="_message" placeholder="Message.."
+                        <label>Message</label>
+                        <textarea id="message" autocomplete="off" name="_message"
                             style="height:200px"></textarea>
 
                         <button class="btn-grid" type="submit">
