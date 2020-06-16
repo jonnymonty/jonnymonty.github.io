@@ -1,7 +1,7 @@
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li');
-const logoname = document.querySelector('.name h1');
+const logoname = document.querySelector('.logo');
 const displayProjectContainer = document.querySelector('.displayProjectContainer');
 
 // TO:DO add the ability to click Jonny Monty to take you to the about page

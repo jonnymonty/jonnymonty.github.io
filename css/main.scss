@@ -57,11 +57,6 @@ header {
   transition: background-color .5s ease;
 }
 
-.nav-scrolled .name {
-  transition: color .5s;
-  color: #fd5d5d;
-}
-
 .nav-scrolled::before {
   transition: backdrop-filter .5s ease;
   content: '';
@@ -74,14 +69,27 @@ header {
   z-index: -1;
 }
 
-.name {
-  transition: color .5s ease;
-  color: #FFF;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+.nav-scrolled .logo {
+  fill: #fd5d5d;
 }
 
-.name h1 {
+// .nav-scrolled .logo-container {
+//   background-color: #fd5d5d;
+// }
+
+// .logo-container {
+//   display: flex;
+//   justify-content: center;
+//   width: 58px;
+//   height: 58px;
+//   border-radius: 50%;
+//   transition: background-color .5s ease;
+// }
+
+.logo {
+  transition: fill .5s ease;
+  width: 40px;
+  fill: #fff;
   cursor: pointer;
 }
 
@@ -310,10 +318,11 @@ html {
   position: relative;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
-  background-color: rgb(255, 255, 255);
+  background-color: #111720;
   border-top: 2px solid #fd5d5d;
-  height: 950px;
+  height: 1200px;
   width: 100%;
+  z-index: 1;
 }
 
 #project-info {
@@ -341,10 +350,11 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
 }
 
 .project-main h1 {
+  color: #fff;
   padding-bottom: 20px;
 }
 
@@ -356,7 +366,7 @@ html {
   transform: translateX(-50%);
   height: 50px;
   width: 80px;
-  border-top: 1px solid #000;
+  border-top: 1px solid #fff;
 }
 
 .project-container {
@@ -366,33 +376,38 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: #080E17;
+  border-radius: 15px;
+  margin-top: 10px;
+  z-index: 1;
 }
 
-.project-container::after {
-  position: absolute;
-  content: '';
-  top: 50%;
-  right: 50%;
-  height: 1200px;
-  width: 1200px;
-  transform: translate(50%, -50%) rotate(45deg);
-  background-color: rgba(0, 0, 0, 0.05);
-  z-index: -1;
-}
+// .project-container::after {
+//   position: absolute;
+//   content: '';
+//   top: 50%;
+//   right: 50%;
+//   height: 1200px;
+//   width: 1200px;
+//   transform: translate(50%, -50%) rotate(45deg);
+//   background-color: rgba(0, 0, 0, 0.05);
+//   z-index: -1;
+// }
 
 .project-container .box {
   position: relative;
   width: 300px;
   height: 300px;
-  background: #ff0;
   margin: 10px;
   box-sizing: border-box;
   display: inline-block;
+  z-index: 1;
 }
 
 .imgBox {
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .imgBox img {
@@ -400,6 +415,7 @@ html {
   width: 300px;
   height: 300px;
   transition: transform 2s;
+  z-index: 1;
 }
 
 .details {
@@ -411,6 +427,7 @@ html {
   background: rgba(0, 0, 0, .8);
   transform: scaleY(0);
   transition: transform .5s;
+  z-index: 1;
 }
 
 @media screen and (min-width: 769px)
@@ -468,15 +485,39 @@ html {
 
 /* End Projects */
 
+/* Transition */
+.transition-container {
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+}
+
+.transition {
+  position: absolute;
+  width: 130%;
+  margin-left: 150px;
+  z-index: -1;
+}
+
+.transition1 {
+  bottom: -40px;
+}
+
+.transition2 {
+  bottom: -60px;
+}
+
+/* End Transition */
+
 /* Contact */
 
 #contact {
   position: relative;
   font-family: 'Montserrat', sans-serif;
-  background-color: #292a2c;
-  border-top: 2px solid #fd5d5d;
+  background-color: #080E17;
+  // border-top: 2px solid #fd5d5d;
   width: 100%;
-  height: 875px;
+  height: 950px;
 }
 
 .contact-main {
@@ -494,12 +535,12 @@ html {
 
 .contact-main h1 {
   margin-bottom: 40px;
-  color: #acb0b3;
+  color: #fff;
 }
 
 .contact-main label {
-  color: #ACB0B3;
-  opacity: 70%;
+  color: #fff;
+  opacity: 50%;
   padding-left: 10px;
 }
 
@@ -511,7 +552,7 @@ html {
   transform: translateX(-50%);
   height: 50px;
   width: 80px;
-  border-top: 1px solid #acb0b3;
+  border-top: 1px solid #fff;
 }
 
 .contact-container {
@@ -519,16 +560,7 @@ html {
   justify-content: center;
 }
 
-.contact-image-container {
-  padding-right: 25px;
-}
-
-.contact-image-container img {
-  height: 408px;
-}
-
 .contact-form {
-  padding-left: 25px;
   width: 519px;
   margin: auto;
 }
@@ -542,19 +574,22 @@ textarea {
   /* Full width */
   padding: 12px;
   /* Some padding */
-  background-color: transparent;
-  border: none;
-  border-top: 2px solid rgba(255, 255, 255, 0.3);
-  border-right: 2px solid rgba(255, 255, 255, 0.3);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  border-left: 2px solid rgba(0, 0, 0, 0.3);
+  background-color: #111720;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   margin-top: 6px;
   /* Add a top margin */
   margin-bottom: 16px;
   /* Bottom margin */
-  color: #acb0b3;
+  color: #fff;
   outline: none;
   resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #fd5d5d;
 }
 
 #subject {
@@ -569,11 +604,10 @@ textarea {
 input[type=submit] {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  transition: background-color .5s ease;
+  // transition: background-color .5s ease;
   padding: 15px 32px;
   font-size: 16px;
-  border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -584,10 +618,10 @@ input[type=submit]:hover {
 /* Contact Button Styles */
 button {
   padding: 15px 32px;
-  border: none;
-  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #111720;
   color: white;
   transition: all 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
 }
@@ -775,6 +809,23 @@ p {
   }
 }
 
+@media screen and (max-width: 1288px) {
+  .transition {
+    position: absolute;
+    width: 130%;
+    margin-left: auto;
+    z-index: -1;
+  }
+  
+  .transition1 {
+    bottom: -20px;
+  }
+  
+  .transition2 {
+    bottom: -40px;
+  }
+}
+
 @media screen and (max-width: 1150px) {
   .contact-main h1 {
     background: url("/img/Envelope.png") no-repeat center;
@@ -784,10 +835,6 @@ p {
   }
 
   .contact-main h1::after {
-    display: none;
-  }
-  
-  .contact-image-container {
     display: none;
   }
   
@@ -806,6 +853,21 @@ p {
 
 // TODO: Prevent the line animations from firing again when the page is resized
 @media screen and (max-width: 998px) {
+
+  .transition {
+    position: absolute;
+    width: 130%;
+    margin-left: auto;
+    z-index: -1;
+  }
+  
+  .transition1 {
+    bottom: 0px;
+  }
+  
+  .transition2 {
+    bottom: -20px;
+  }
 
   /* Home Styles */
   #home-content {
@@ -889,6 +951,21 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+
+  .transition {
+    position: absolute;
+    width: 130%;
+    margin-left: auto;
+    z-index: -1;
+  }
+  
+  .transition1 {
+    bottom: 20px;
+  }
+  
+  .transition2 {
+    bottom: 0px;
+  }
 
   /* Home Styles */
   #home-content {
