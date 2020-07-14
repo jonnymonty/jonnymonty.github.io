@@ -949,8 +949,9 @@ button:focus .front {
   z-index: 1;
 }
 
-.project img {
+.project iframe {
   width: 900px;
+  height: 507px;
 }
 
 /* End Gif Project */
@@ -1213,8 +1214,9 @@ p {
     width: 640px;
   }
 
-  .project img {
+  .project iframe {
     width: 720px;
+    height: 405px;
   }
 
   /* End Project */
@@ -1436,8 +1438,9 @@ p {
     transition: transform .5s;
   }
 
-  .project img {
-    width: 100%;
+  .project iframe {
+    width: 370px;
+    height: 209px;
   }
 
   /* End Project */

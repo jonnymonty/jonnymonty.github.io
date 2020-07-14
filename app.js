@@ -75,18 +75,34 @@ sectionOneObserver.observe(sectionOne);
     });
  }
 
+ //<img src="gif/${project}.gif"></img>
  // Display the projects gif
  function DisplayProject(project) {
      const projectElement = document.createElement('div');
      projectElement.setAttribute('class', 'projectContainer');
      projectElement.onclick = closeProject;
-     const innercode = `<div class="project">
-        <img src="gif/${project}.gif"></img>
+     const innercode = 
+     `<div class="project">
+        <iframe width="560" height="315" src="${embedProject(project)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
      </div>`;
 
      projectElement.innerHTML = innercode;
 
      displayProjectContainer.appendChild(projectElement);
+ }
+
+ function embedProject(project) {
+    if (project == "apod") {
+        return "https://www.youtube.com/embed/CMLGvYhsaDM";
+    } else if (project == "chatapp") {
+        return "https://www.youtube.com/embed/pzKpVxdjnX0";
+    } else if (project == "cineplex") {
+        return "https://www.youtube.com/embed/cIheKoOqUeQ";
+    } else if (project == "exercisetracker") {
+        return "https://www.youtube.com/embed/sgM5rLrCClQ";
+    } else {
+        return ""
+    }
  }
 
  // Close the gif project
